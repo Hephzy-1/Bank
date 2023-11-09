@@ -27,7 +27,7 @@ app.get("/", (req, res) => {
 app.use("/auth", authRoute)
 app.use(authUser)
 app.use("/admin", adminRoute)
-app.use("/accounts", accountRoute)
+app.use("/account", accountRoute)
 app.use(errorHandler);
 
 app.use((req, res, next) => {

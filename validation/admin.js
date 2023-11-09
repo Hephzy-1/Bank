@@ -4,23 +4,30 @@ const currencySchema = Joi.object({
   currency: Joi.string().length(3).required()
 })
 
-const getSchema = Joi.object({
-  account_number: Joi.number().integer().max(9999999999).required()
-})
+// const getSchema = Joi.object({
+//   account_number: Joi.number().integer().max(9999999999).required()
+// })
 
-const getAll = Joi.object({
+// const getAllSchema = Joi.object({
+//   email: Joi.string().email().required(),
+//   role: Joi.string().valid('admin').required()
+// })
+
+const closeSchema = Joi.object({
   email: Joi.string().email().required(),
-  role: Joi.string().valid('admin').required()
+  Account_number: Joi.number().integer().required()
 })
 
-const deleteSchema = Joi.object({
-  account_number: Joi.number().integer().required(),
-  role: Joi.string().required()
+const openSchema = Joi.object({
+  email: Joi.string().email().required(),
+  Account_number: Joi.number().integer().required()
 })
 
 module.exports = {
   currencySchema,
-  deleteSchema,
-  getSchema,
-  getAll
+  closeSchema,
+  openSchema,
+  // getSchema,
+  // getAllSchema
+
 }

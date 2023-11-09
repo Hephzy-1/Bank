@@ -2,15 +2,16 @@ const express = require('express');
 const accountRouter = express.Router();
 const logger = require('../middlewares/logger')
 const accFn = require('../controllers/account');
+const transFn = require('../controllers/transactions/deposit')
 
 accountRouter.post('/', accFn.createAccount);
-// accountRouter.get('/:id', accFn.getAcc);
+// accountRouter.get('/:id', accFn.getAc);
 // accountRouter.get('/', accFn.getAccounts);
 // accountRouter.delete('/deleteAccount', accFn.closeAcc);
 accountRouter.post('/account/currency', accFn.createCurrencyAcc);
-accountRouter.post('/:id/deposits', accFn.depositAcc);
-accountRouter.get('/:id/deposits', accFn.getDeposits);
-accountRouter.get('/:account_id/deposits/:id', accFn.getUserDeposits);
+accountRouter.post('/:id/deposits', transFn.depositAcc);
+// accountRouter.get('/:id/deposits', transFn.getDeposits);
+// accountRouter.get('/:account_id/deposits/:id', transFn.getUserDeposits);
 accountRouter.get('/:account_id/withdrawals/:id', accFn.getUserWithdrawals);
 accountRouter.get('/:id/withdrawals', accFn.getWithdrawal);
 accountRouter.post('/:id/withdrawals', accFn.withdrawFrom);

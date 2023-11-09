@@ -106,76 +106,6 @@ async function closeAcc (req, res) {
   }
 }
 
-// DEPOSIT INTO ACCOUNT
-async function depositAcc (req, res) {
-  try {
-    const id = req.params.id
-    const result = await accountModel.deposit(req.body, id, req);
-    
-    if (result) {
-      res.status(200).json({Message: `Deposit successfully`})
-    } else {
-      res.status(400).json({Message: `Error occurred somewhere`})
-    }
-  } catch (err) {
-    if (err instanceof AccClosedError) {
-      res.status(code).json({message: err.message})
-    } else if (err instanceof AccNotMatchError) {
-      res.status(code).json({message: err.message})
-    } else {
-      res.status(500).json({Message: `INTERNAL SERVER ERROR`, Error: err.message })
-    }
-   
-  }
-}
-
-// GET DETAILS ABOUT USERS DEPOSITS
-async function getDeposits (req, res) {
-  try {
-    const id = req.params.id
-    const result = await accountModel.getDeposits(req.body, id)
-
-    if (result) {
-      res.status(200).json({Message: `Here is the result`, data: result[0]})
-    } else {
-      res.status(400).json({Message: `Account Doesn't Exist`})
-    }
-  } catch (err) {
-    if (err instanceof AccClosedError) {
-      res.status(code).json({message: message})
-    } else if (err instanceof AccNotMatchError) {
-      res.status(code).json({message: message})
-    } else {
-      res.status(500).json({Message: `INTERNAL SERVER ERROR`, Error: err.message })
-    }
-  }
-}
-
-// GET DETAILS ABOUT SPECIFIC USERS DEPOSITS
-async function getUserDeposits (req, res) {
-  try {
-    const id = req.params.id;
-    const account_id = req.params.account_id
-    const result = await accountModel.getSpecificDeposits(req.body, id, account_id)
-
-    if (result) {
-      res.status(200).json({Message: `Here is the result`, data: result[0]})
-    } else {
-      res.status(400).json({Message: `Account Doesn't Exist`})
-    }
-  } catch (err) {
-    if (err instanceof AccClosedError) {
-      res.status(code).json({message: message})
-    } else if (err instanceof AccNotMatchError) {
-      res.status(code).json({message: message})
-    } else if (err instanceof IDNotMatchError) {
-      res.status(code).json({message: message})
-    } else {
-      res.status(500).json({Message: `INTERNAL SERVER ERROR`, Error: err.message })
-    }
-  }
-}
-
 // CREATE ACCOUNT IN FOREIGN CURRENCIES
 async function createCurrencyAcc (req, res) {
   try {
@@ -391,16 +321,13 @@ module.exports = {
   // getAcc,
   // getAccounts,
   closeAcc,
-  depositAcc,
   createCurrencyAcc,
   withdrawFrom,
   transferTo,
-  getUserDeposits,
   getUserWithdrawals,
   getUserTransfer,
   billPayment,
   getUserBills,
-  getDeposits, 
   getBills,
   getWithdrawal,
   getTransfer

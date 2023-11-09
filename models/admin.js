@@ -74,126 +74,93 @@ async function getSpecificAccount(payload, id) {
 }
 
 // GET ALL ACCOUNTS
-async function getAccount(payload) {
+async function getAccounts(payload) {
   try {
+    const { error, value } = schema.getAllSchema.validate(payload);
 
-    // const { error, value } = schema.getAll.validate(payload);
-
-    // if (error) {
-    //   console.log(error.details, error.message)
-    //   throw Error(error);
-    // }
-
-    const { email, role } = payload;
-
-    const adminExists = await check(email);
-
-    if (!adminExists) {
-      console.log("I don't exist");
-      logger.warn(`This Admin doesn't Exists`)
-      throw Error(`This Admin doesn't exist`);
+    if (error) {
+      console.log(error.details, error.message)
+      throw Error(error);
     }
 
-    const query = `
+    const { email, role } = value;
+
+      const query = `
       SELECT Users.Email, Users.Username, Accounts.Account_No, Accounts.Balance, Accounts.Account_Type, Accounts.Currency
       FROM Users
       INNER JOIN Accounts ON Users.Email = Accounts.User_Email
     `;
 
-    if (role === 'admin') {
       const values = [email, role]
-      console.log(values);
       const result = (await dB).query(query, values)
 
       return result;
-    } else {
-      throw Error(`Only Admins can view this`);
-    }
 
-  } catch (error) {
-    throw Error(error.message)
+  } catch (err) {
+    throw Error(err)
   }
 }
 
 // Close SPECIFIC ACCOUNTS
-async function closeAccount(payload, role, id) {
-  // const decoded = jwt.verifyToken(req.headers["authorization"])
-  const { error, value } = schema.closeSchema.validate(payload);
-
-  if (error) {
-    console.log(error.details, error.message)
-    throw Error(error);
-  }
-
-  const { email, Account_number } = value
-
-
-
+async function closeAccount(payload, id) {
   try {
-    // if (!decoded) {
-    //   throw Error(error);
-    // } else {
-    const query = `
-        UPDATE Accounts
-        SET Status = False
-        WHERE Account_number = ? AND Email = ?
-      `;
-    if (role === 'admin') {
-      if (id === Account_number) {
-        const value = [Account_number, email]
-        const response = await warningEmail(email, config.SENDER_EMAIL)
-        const result = (await dB).query(query, value)
+    const { error, value } = schema.closeSchema.validate(payload);
 
-        return result;
-      } else {
-        throw Error(error);
-      }
-    } else {
+    if (error) {
+      console.log(error.details, error.message)
       throw Error(error);
     }
-    // }
+
+    const { email, Account_number } = value
+
+    const query = `
+      UPDATE Accounts
+      SET Status = False
+      WHERE Account_No = ? AND User_Email = ?
+    `;
+    
+    if (id == Account_number) {
+      const value = [Account_number, email]
+      const result = (await dB).query(query, value)
+      const response = await warningEmail(email, config.SENDER_EMAIL)
+      console.log(response);
+
+      return result;
+    } else {
+      throw Error(`ID doesn't match`);
+    }
 
   } catch (error) {
     throw Error(error.message)
   }
 }
 
-// TEMPORARILY CLOSE THE ACCOUNT
-async function freezeAccount(payload, role, id) {
-  const decoded = jwt.verifyToken(req.cookies.token)
-  const { error, value } = schema.deleteSchema.validate(payload);
-
-  if (error) {
-    console.log(error.details, error.message)
-    throw Error(error);
-  }
-
-  const { email, Account_number } = value
-
-  const query = `
-    UPDATE Accounts
-    SET Status = False
-    WHERE Account_number = ? AND Email = ?
-  `;
-
+// ACTIVATE THE ACCOUNT
+async function activeAccount(payload, id) {
   try {
-    if (!decoded) {
+    const { error, value } = schema.openSchema.validate(payload);
+
+    if (error) {
+      console.log(error.details, error.message)
       throw Error(error);
+    }
+
+    const { email, Account_number } = value
+
+    const query = `
+      UPDATE Accounts
+      SET Status = True
+      WHERE Account_No = ? AND User_Email = ?
+    `;
+    
+    if (id == Account_number) {
+      const value = [Account_number, email]
+      const result = (await dB).query(query, value)
+      const response = await warningEmail(email, config.SENDER_EMAIL)
+
+      return result;
     } else {
-      if (role === 'admin') {
-        if (id === Account_number) {
-          const value = [Account_number, email]
-          const response = await temporarilyClosedEmail(email, config.SENDER_EMAIL)
-          const result = (await dB).query(query, value, response)
-
-          return result;
-        } else {
-          throw Error(error);
-        }
-
-      } else {
-        throw Error(error);
-      }
+      throw Error(`ID doesn't match`);
     }
 
   } catch (error) {
@@ -203,8 +170,8 @@ async function freezeAccount(payload, role, id) {
 
 module.exports = {
   createCurrency,
-  getAccount,
+  getAccounts,
   getSpecificAccount,
   closeAccount,
-  freezeAccount
+  activeAccount
 }

@@ -4555,3 +4555,319 @@ info: POST /auth/user/login {"timestamp":"2023-10-14T18:44:39.550Z"}
 {"level":"info","message":"Server running on PORT 3100"}
 {"level":"info","message":"GET /admin/account"}
 {"level":"info","message":"Token worked"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"GET /admin/account"}
+{"level":"info","message":"Token worked"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"GET /admin/account"}
+{"level":"info","message":"Token worked"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"GET /admin/account"}
+{"level":"info","message":"Token worked"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"GET /admin/account"}
+{"level":"info","message":"Token worked"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"GET /admin/account"}
+{"level":"info","message":"Token worked"}
+{"level":"info","message":"GET /admin/account"}
+{"level":"info","message":"Token worked"}
+{"level":"info","message":"GET /admin/account"}
+{"level":"info","message":"Token worked"}
+{"level":"info","message":"GET /admin/7894508221"}
+{"level":"info","message":"Token worked"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"GET /admin/accounts"}
+{"level":"info","message":"Token worked"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"GET /admin/accounts"}
+{"level":"info","message":"Token worked"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"GET /admin/accounts"}
+{"level":"info","message":"Token worked"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"GET /admin/accounts"}
+{"level":"info","message":"Token worked"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"GET /admin/all-accounts"}
+{"level":"info","message":"Token worked"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"GET /admin/all-accounts"}
+{"level":"info","message":"Token worked"}
+{"level":"info","message":"GET /admin/all-accounts"}
+{"level":"info","message":"Token worked"}
+{"level":"info","message":"GET /admin/all-accounts"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"GET /admin/all-accounts"}
+{"level":"info","message":"Token worked"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"GET /admin/all-accounts"}
+{"level":"info","message":"Token worked"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"GET /admin/all-accounts"}
+{"level":"info","message":"Token worked"}
+{"level":"warn","message":"Route not found: GET /all-accounts"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"GET /admin/accounts"}
+{"level":"info","message":"Token worked"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /admin/closeAccount"}
+{"level":"info","message":"Token worked"}
+{"level":"warn","message":"Route not found: POST /closeAccount"}
+{"level":"info","message":"PUT /admin/closeAccount"}
+{"level":"info","message":"Token worked"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"PUT /admin/closeAccount"}
+{"level":"info","message":"Token worked"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"PUT /admin/closeAccount"}
+{"level":"info","message":"Token worked"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"PUT /admin/closeAccount"}
+{"level":"info","message":"Token worked"}
+{"level":"warn","message":"Route not found: PUT /closeAccount"}
+{"level":"info","message":"PUT /admin/closeAccount/2048909712"}
+{"level":"info","message":"Token worked"}
+{"level":"info","message":"Email sent:"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"PUT /admin/closeAccount/2048909712"}
+{"level":"info","message":"Token worked"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"PUT /admin/closeAccount/2048909712"}
+{"level":"info","message":"Token worked"}
+{"level":"info","message":"Email sent:"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"PUT /admin/closeAccount/2048909712"}
+{"level":"info","message":"Token worked"}
+{"level":"info","message":"Email sent:"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"PUT /admin/closeAccount/2048909712"}
+{"level":"info","message":"Token worked"}
+{"level":"info","message":"Email sent:"}
+{"level":"info","message":"PUT /admin/closeAccount/2048909712"}
+{"level":"info","message":"Token worked"}
+{"level":"info","message":"Email sent:"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"PUT /admin/closeAccount/2048909712"}
+{"level":"info","message":"Token worked"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"PUT /admin/closeAccount/2048909712"}
+{"level":"info","message":"Token worked"}
+{"level":"info","message":"PUT /admin/closeAccount/2048909712"}
+{"level":"info","message":"Token worked"}
+{"level":"info","message":"PUT /admin/closeAccount/2048909712"}
+{"level":"info","message":"Token worked"}
+{"level":"info","message":"PUT /admin/closeAccount/2048909712"}
+{"level":"info","message":"Token worked"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"PUT /admin/closeAccount/2048909712"}
+{"level":"info","message":"Token worked"}
+{"level":"info","message":"Email sent:"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"GET /admin/activeAccount/2048909712"}
+{"level":"info","message":"Token worked"}
+{"level":"warn","message":"Route not found: GET /activeAccount/2048909712"}
+{"level":"info","message":"GET /admin/activeAccount/2048909712"}
+{"level":"info","message":"Token worked"}
+{"level":"warn","message":"Route not found: GET /activeAccount/2048909712"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"GET /admin/activeAccount/2048909712"}
+{"level":"info","message":"POST /auth/users/login"}
+{"level":"info","message":"User with email hzdelight01@gmail.com and role users retrieved from database"}
+{"level":"info","message":"GET /admin/activeAccount/2048909712"}
+{"level":"info","message":"Token worked"}
+{"level":"warn","message":"Route not found: GET /activeAccount/2048909712"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /auth/users/login"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /auth/users/login"}
+{"level":"info","message":"User with email hzprincess01@gmail.com and role users retrieved from database"}
+{"level":"info","message":"POST /admin/currency"}
+{"level":"info","message":"Token worked"}
+{"level":"info","message":"POST /account/account"}
+{"level":"info","message":"Token worked"}
+{"level":"warn","message":"Route not found: POST /account/account"}
+{"level":"info","message":"POST /account/"}
+{"level":"info","message":"Token worked"}
+{"level":"warn","message":"Route not found: POST /account/"}
+{"level":"info","message":"POST /account/"}
+{"level":"info","message":"Token worked"}
+{"level":"warn","message":"Route not found: POST /account/"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /account/"}
+{"level":"info","message":"Token worked"}
+{"level":"warn","message":"Route not found: POST /account/"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /account/account"}
+{"level":"info","message":"Token worked"}
+{"level":"warn","message":"Route not found: POST /account/account"}
+{"level":"info","message":"POST /account/account"}
+{"level":"info","message":"Token worked"}
+{"level":"warn","message":"Route not found: POST /account/account"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /account/account"}
+{"level":"info","message":"Token worked"}
+{"level":"warn","message":"Route not found: POST /account/account"}
+{"level":"info","message":"POST /account/account"}
+{"level":"info","message":"Token worked"}
+{"level":"warn","message":"Route not found: POST /account/account"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /account/"}
+{"level":"info","message":"Token worked"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /account/"}
+{"level":"info","message":"Token worked"}
+{"level":"info","message":"POST /account/"}
+{"level":"info","message":"Token worked"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /account/"}
+{"level":"info","message":"Token worked"}
+{"level":"info","message":"POST /account/"}
+{"level":"info","message":"Token worked"}
+{"level":"info","message":"Account is being created"}
+{"level":"info","message":"Account has been created"}
+{"level":"info","message":"POST /account/"}
+{"level":"info","message":"Token worked"}
+{"level":"info","message":"Account is being created"}
+{"level":"info","message":"POST /account/"}
+{"level":"info","message":"Token worked"}
+{"level":"info","message":"Account is being created"}
+{"level":"info","message":"Account has been created"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /accounts/0925648925/deposits"}
+{"level":"info","message":"Token worked"}
+{"level":"warn","message":"Route not found: POST /accounts/0925648925/deposits"}
+{"level":"info","message":"POST /account/0925648925/deposits"}
+{"level":"info","message":"Token worked"}
+{"level":"warn","message":"Couldn't deposit"}
+{"level":"warn","message":"err is not defined"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /account/1056723452/deposits"}
+{"level":"info","message":"Token worked"}
+{"level":"warn","message":"Error: connect ETIMEDOUT"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /account/1056723452/deposits"}
+{"level":"info","message":"Token worked"}
+{"level":"warn","message":"Couldn't deposit"}
+{"level":"info","message":"POST /account/105672452/deposits"}
+{"level":"info","message":"Token worked"}
+{"level":"warn","message":"Error: ID doesn't match with account provided"}
+{"level":"info","message":"POST /account/1056723452/deposits"}
+{"level":"info","message":"Token worked"}
+{"level":"warn","message":"Couldn't deposit"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}

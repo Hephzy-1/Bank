@@ -1,4 +1,4 @@
-const { createCurrency, getAccount, getSpecificAccount, closeAccount } = require('../models/admin');
+const { createCurrency, getSpecificAccount, closeAccount, getAccounts, activeAccount } = require('../models/admin');
 
 // CREATE CURRENCY
 async function currency(req, res) {
@@ -32,29 +32,29 @@ async function getUser (req, res) {
 }
 
 // GET ACCOUNTS
-async function getAcc (req, res) {
+async function getAllAccounts (req, res) {
   try {
-    const result = await getAccount(req.body)
+    const result = await getAccounts(req.body)
 
     if (result) {
       res.status(200).json({Message: `Here is the result`, data: result[0]})
     } else {
-      res.status(402).json({Message: `Error occured during input`})
+      res.status(402).json({Message: `Error occured during getting`})
     }
   } catch (err) {
     res.status(500).json({Message: `INTERNAL SERVER ERROR`, Error: err.message});
   }
 }
 
-// DELETE USER ACCOUNT
-async function deleteAcc (req, res) {
+// ACTIVATE USER ACCOUNT
+async function activeAcc (req, res) {
   try {
     const id = req.params.id
-    const role = req.params.role
-    const result = await deleteAccount(req.body, id, role, req)
+    const result = await activeAccount(req.body, id)
+    console.log(result);
 
-    if (!result) {
-      res.status(200).json({Message: `Account Deleted Successfully`})
+    if (result) {
+      res.status(200).json({Message: `Account Has Been Activated Successfully`})
     } else {
       res.status(400).json({Message: `User Doesn't Exists` })
     }
@@ -67,11 +67,11 @@ async function deleteAcc (req, res) {
 async function closeAcc (req, res) {
   try {
     const id = req.params.id
-    const role = req.params.role
-    const result = await closeAccount(req.body, id, role, req)
+    const result = await closeAccount(req.body, id)
+    console.log(result);
 
-    if (!result) {
-      res.status(200).json({Message: `Account Deleted Successfully`})
+    if (result) {
+      res.status(200).json({Message: `Account Closed Successfully`})
     } else {
       res.status(400).json({Message: `User Doesn't Exists` })
     }
@@ -83,7 +83,7 @@ async function closeAcc (req, res) {
 module.exports = {
   currency,
   getUser,
-  deleteAcc,
+  activeAcc,
   closeAcc,
-  getAcc
+  getAllAccounts
 }
