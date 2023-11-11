@@ -13,30 +13,12 @@ class CurrencyError extends Error {
   }
 }
 
-// Account was closed
-class AccClosedError extends Error {
-  constructor(message) {
-    super(message);
-    this.name = "This Account has been closed";
-    this.code = 400;
-  };
-}
-
 // ID and Account number doesn't match
 class AccNotMatchError extends Error {
   constructor(message) {
     super(message);
     this.name = "This id doesn't match the account number";
     this.code = 404;
-  };
-}
-
-// INSUFFICIENT AMOUNT
-class InsufficientError extends Error {
-  constructor(message) {
-    super(message);
-    this.name = "Insuficient Amount";
-    this.code = 400;
   };
 }
 
@@ -52,13 +34,13 @@ class IDNotMatchError extends Error {
 // CHECK IF ACCOUNT EXISTS AND IS ACTIVE
 async function checkStatus(accountNumber) {
   const query = `
-    SELECT COUNT(Status)
+    SELECT Status
     FROM Accounts
     WHERE Account_No = ? AND Status = 1
   `;
   const values = [accountNumber];
   const result = (await dB).query(query, values);
-  return result[0];
+  return result;
 }
 
 // CHECK IF ACCOUNT HAS ENOUGH MONEY TO TRANSACT
@@ -71,9 +53,8 @@ async function checkBalance(accountNumber) {
   const values = [accountNumber];
   const result = (await dB).query(query, values);
   console.log(result);
-  return result[0]; // Extract the balance from the result
+  return result; // Extract the balance from the result
 }
-
 
 // WITHDRAWAL FROM AN ACCOUNT
 async function withdrawal(payload, id) {
@@ -89,20 +70,21 @@ async function withdrawal(payload, id) {
 
   try {
     const accActive = await checkStatus(Source_account)
-    console.log(accActive)
+    console.log(accActive[0][0]);
 
-    if (!accActive) {
+    if (!accActive[0][0]) {
       logger.error(`This account cannot transact`)
-      throw new Error(`This account cannot transact`)
-    }
+      throw Error(`This account cannot transact`)
+    } 
 
     if (id == Source_account) {
 
       const hasAmount = await checkBalance(Source_account)
-      console.log(hasAmount);
-      if (hasAmount >= Amount) {
+      console.log(hasAmount[0][0].Balance);
+
+      if (hasAmount[0][0].Balance <= Amount) {
         logger.error(`Not Enough Balance`)
-        throw new InsufficientError(message);
+        throw Error (`Not Enough Balance`);
       }
 
       const query = `
@@ -135,7 +117,7 @@ async function withdrawal(payload, id) {
         return result;
       } else {
         const withdrawQuery = `
-          UPDATE withdraws
+          UPDATE Withdraws
           SET Status = Failed
           WHERE Transaction_id = ? 
         `;
@@ -147,12 +129,11 @@ async function withdrawal(payload, id) {
         return false;
       }
 
-
     } else {
-      throw new AccNotMatchError(message)
+      throw Error(`ID Doesn't Match`)
     }
   } catch (error) {
-    throw Error(error.message)
+    throw Error(error)
   }
 }
 

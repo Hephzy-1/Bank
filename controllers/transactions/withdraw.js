@@ -15,12 +15,14 @@ async function withdrawFrom (req, res) {
       res.status(400).json({message: `Error Occured`})
     }
   } catch (err) {
-    if (err === `This account cannot transact`) {
-      logger.error(`${err.message}`)
-      res.status(400).json({Message: `This account has been closed and has such cannot transact`})
+    logger.error(`${err.message}`)
+    if (err === `Not Enough Balance`) {
+      res.status(400).json({message: `You don't have enough money`})
+    } else {
+      res.status(500).json({message: `INTERNAL SERVER ERROR`, Error: err.message })
     }
-    res.status(500).json({Message: `INTERNAL SERVER ERROR`, Error: err.message })
   }
+    
 }
 
 // GET DETAILS ABOUT USERS Withdrawals

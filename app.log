@@ -5015,3 +5015,279 @@ info: POST /auth/user/login {"timestamp":"2023-10-14T18:44:39.550Z"}
 {"level":"info","message":"POST /account/2048909712/withdrawals"}
 {"level":"info","message":"Token worked"}
 {"level":"error","message":"This account cannot transact"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /account/2048909712/withdrawals"}
+{"level":"info","message":"Token worked"}
+{"level":"error","message":"This account cannot transact"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /account/2048909712/withdrawals"}
+{"level":"info","message":"Token worked"}
+{"level":"error","message":"This account cannot transact"}
+{"level":"error","message":"This account cannot transact"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /account/2048909712/withdrawals"}
+{"level":"info","message":"Token worked"}
+{"level":"error","message":"This account cannot transact"}
+{"level":"error","message":"This account cannot transact"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /account/2048909712/withdrawals"}
+{"level":"info","message":"Token worked"}
+{"level":"error","message":"This account cannot transact"}
+{"level":"error","message":"This account cannot transact"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /account/2048909712/withdrawals"}
+{"level":"info","message":"Token worked"}
+{"level":"error","message":"This account cannot transact"}
+{"level":"error","message":"This account cannot transact"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /account/2048909712/deposits"}
+{"level":"info","message":"Token worked"}
+{"level":"error","message":"This account cannot transact"}
+{"level":"error","message":"Error: This account cannot transact"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /account/1378915902/withdrawals"}
+{"level":"info","message":"Token worked"}
+{"level":"error","message":"This account cannot transact"}
+{"level":"error","message":"This account cannot transact"}
+{"level":"info","message":"POST /account/1378915902/withdrawals"}
+{"level":"info","message":"Token worked"}
+{"level":"error","message":"This account cannot transact"}
+{"level":"error","message":"This account cannot transact"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /account/1378915902/withdrawals"}
+{"level":"info","message":"Token worked"}
+{"level":"error","message":"This account cannot transact"}
+{"level":"error","message":"This account cannot transact"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /account/1378915902/withdrawals"}
+{"level":"info","message":"Token worked"}
+{"level":"error","message":"This account cannot transact"}
+{"level":"error","message":"This account cannot transact"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /account/1378915902/withdrawals"}
+{"level":"info","message":"Token worked"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'Status')"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /account/1378915902/withdrawals"}
+{"level":"info","message":"Token worked"}
+{"level":"error","message":"This account cannot transact"}
+{"level":"error","message":"This account cannot transact"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /account/1378915902/withdrawals"}
+{"level":"info","message":"POST /auth/users/login"}
+{"level":"info","message":"User with email hzprincess01@gmail.com and role users retrieved from database"}
+{"level":"info","message":"POST /account/1378915902/withdrawals"}
+{"level":"info","message":"Token worked"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'Status')"}
+{"level":"info","message":"POST /account/1378915902/withdrawals"}
+{"level":"info","message":"Token worked"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'Status')"}
+{"level":"info","message":"POST /account/1378915902/withdrawals"}
+{"level":"info","message":"Token worked"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'Status')"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /account/1378915902/withdrawals"}
+{"level":"info","message":"Token worked"}
+{"level":"error","message":"This account cannot transact"}
+{"level":"error","message":"This account cannot transact"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /account/1378915902/withdrawals"}
+{"level":"info","message":"Token worked"}
+{"level":"error","message":"This account cannot transact"}
+{"level":"error","message":"This account cannot transact"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /account/1378915902/withdrawals"}
+{"level":"info","message":"Token worked"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'Balance')"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /account/1378915902/withdrawals"}
+{"level":"info","message":"Token worked"}
+{"level":"error","message":"Check constraint 'chkbalance' is violated."}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /account/1378915902/withdrawals"}
+{"level":"info","message":"Token worked"}
+{"level":"error","message":"Check constraint 'chkbalance' is violated."}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /account/1378915902/withdrawals"}
+{"level":"info","message":"Token worked"}
+{"level":"error","message":"Check constraint 'chkbalance' is violated."}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /account/1378915902/withdrawals"}
+{"level":"info","message":"Token worked"}
+{"level":"error","message":"Check constraint 'chkbalance' is violated."}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /account/1378915902/withdrawals"}
+{"level":"info","message":"Token worked"}
+{"level":"error","message":"Check constraint 'chkbalance' is violated."}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /account/1378915902/withdrawals"}
+{"level":"info","message":"Token worked"}
+{"level":"error","message":"Check constraint 'chkbalance' is violated."}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /account/1378915902/withdrawals"}
+{"level":"info","message":"Token worked"}
+{"level":"error","message":"Check constraint 'chkbalance' is violated."}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /account/1378915902/withdrawals"}
+{"level":"info","message":"Token worked"}
+{"level":"error","message":"Not Enough Balance"}
+{"level":"error","message":"Not Enough Balance"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /account/1378915902/withdrawals"}
+{"level":"info","message":"Token worked"}
+{"level":"error","message":"Not Enough Balance"}
+{"level":"error","message":"Not Enough Balance"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /account/1378915902/withdrawals"}
+{"level":"info","message":"Token worked"}
+{"level":"error","message":"Not Enough Balance"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /account/1378915902/withdrawals"}
+{"level":"info","message":"Token worked"}
+{"level":"error","message":"Not Enough Balance"}
+{"level":"error","message":"Not Enough Balance"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /account/1378915902/withdrawals"}
+{"level":"info","message":"Token worked"}
+{"level":"error","message":"Not Enough Balance"}
+{"level":"error","message":"Class constructor InsufficientError cannot be invoked without 'new'"}
+{"level":"info","message":"POST /account/1378915902/withdrawals"}
+{"level":"info","message":"Token worked"}
+{"level":"error","message":"Not Enough Balance"}
+{"level":"error","message":"Class constructor InsufficientError cannot be invoked without 'new'"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /account/1378915902/withdrawals"}
+{"level":"info","message":"Token worked"}
+{"level":"error","message":"Not Enough Balance"}
+{"level":"error","message":"Not Enough Balance"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /account/1378915902/withdrawals"}
+{"level":"info","message":"Token worked"}
+{"level":"info","message":"Withdraw Sucessful"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /account/1378915902/deposits"}
+{"level":"info","message":"Token worked"}
+{"level":"error","message":"This account cannot transact"}
+{"level":"error","message":"Error: This account cannot transact"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /account/1378915902/deposits"}
+{"level":"info","message":"Token worked"}
+{"level":"error","message":"ID doesn't match with account provided"}
+{"level":"error","message":"Error: ID doesn't match with account provided"}
+{"level":"info","message":"POST /account/2048909712/deposits"}
+{"level":"info","message":"Token worked"}
+{"level":"error","message":"This account cannot transact"}
+{"level":"error","message":"Error: This account cannot transact"}
+{"level":"info","message":"POST /account/1378915902/deposits"}
+{"level":"info","message":"Token worked"}
+{"level":"error","message":"This account cannot transact"}
+{"level":"error","message":"Error: This account cannot transact"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /account/1378915902/deposits"}
+{"level":"info","message":"Token worked"}
+{"level":"info","message":"Deposit in progress"}
+{"level":"info","message":"Deposited Successfully"}
+{"level":"info","message":"POST /account/2048909712/deposits"}
+{"level":"info","message":"Token worked"}
+{"level":"error","message":"TypeError: Cannot read properties of undefined (reading 'Status')"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /account/2048909712/deposits"}
+{"level":"info","message":"Token worked"}
+{"level":"error","message":"This account cannot transact"}
+{"level":"error","message":"Error: This account cannot transact"}
+{"level":"info","message":"POST /account/1378915902/deposits"}
+{"level":"info","message":"Token worked"}
+{"level":"info","message":"Deposit in progress"}
+{"level":"info","message":"Deposited Successfully"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /account/1378915902/withdrawals"}
+{"level":"info","message":"Token worked"}
+{"level":"info","message":"Withdraw Sucessful"}
+{"level":"info","message":"POST /account/2048909712/withdrawals"}
+{"level":"info","message":"Token worked"}
+{"level":"error","message":"This account cannot transact"}
+{"level":"error","message":"Error: This account cannot transact"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /account/1378915902/withdrawals"}
+{"level":"info","message":"Token worked"}
+{"level":"error","message":"Not Enough Balance"}
+{"level":"error","message":"Error: Not Enough Balance"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /account/1378915902/withdrawals"}
+{"level":"info","message":"Token worked"}
+{"level":"error","message":"Not Enough Balance"}
+{"level":"error","message":"Error: Not Enough Balance"}
+{"level":"info","message":"POST /account/1378915902/withdrawals"}
+{"level":"info","message":"Token worked"}
+{"level":"info","message":"Withdraw Sucessful"}
+{"level":"info","message":"POST /account/1378915902/withdrawals"}
+{"level":"info","message":"Token worked"}
+{"level":"error","message":"Not Enough Balance"}
+{"level":"error","message":"Error: Not Enough Balance"}
+{"level":"info","message":"Server running on PORT 3100"}

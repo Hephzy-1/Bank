@@ -6,7 +6,7 @@ const logger = require('../../middlewares/logger')
 // CHECK IF ACCOUNT EXISTS AND IS ACTIVE
 async function checkStatus(accountNumber) {
   const query = `
-    SELECT COUNT(Status)
+    SELECT Status
     FROM Accounts
     WHERE Account_No = ? AND Status = 1
   `;
@@ -28,14 +28,16 @@ async function deposit(payload, id) {
   const { Amount, Destination_account } = value;
 
   try {
-    const accActive = await checkStatus(Destination_account)
-
-    if (!accActive) {
-      logger.error(`This account cannot transact`)
-      throw new AccClosedError(message)
-    }
-
+    
     if (id == Destination_account) {
+
+      const accActive = await checkStatus(Destination_account)
+      console.log(accActive[0][0]);
+
+      if (!accActive[0][0]) {
+        logger.error(`This account cannot transact`)
+        throw new Error(`This account cannot transact`)
+      }
 
       const query = `
           INSERT INTO deposits (Transaction_id, Amount, Destination_account)
