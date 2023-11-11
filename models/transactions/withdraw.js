@@ -4,16 +4,6 @@ const schema = require('../../validation/account');
 const logger = require('../../middlewares/logger')
 
 // CUSTOM ERRORS
-
-// Currency doesn't out
-class CurrencyNotMatchError extends Error {
-  constructor(message) {
-    super(message);
-    this.name = "Currency doesn't match";
-    this.code = 404;
-  }
-}
-
 // Currency wasn't found
 class CurrencyError extends Error {
   constructor(message) {
@@ -59,20 +49,6 @@ class IDNotMatchError extends Error {
   };
 }
 
-// CHECK IF CURRENCY EXISTS
-async function checkCurrency(currency) {
-  const query = `
-    SELECT COUNT(*)
-    FROM Currency
-    WHERE Type = ?
-  `;
-
-  const value = [currency]
-  const result = (await dB).query(query, value)
-
-  return result
-}
-
 // CHECK IF ACCOUNT EXISTS AND IS ACTIVE
 async function checkStatus(accountNumber) {
   const query = `
@@ -82,7 +58,7 @@ async function checkStatus(accountNumber) {
   `;
   const values = [accountNumber];
   const result = (await dB).query(query, values);
-  return result;
+  return result[0];
 }
 
 // CHECK IF ACCOUNT HAS ENOUGH MONEY TO TRANSACT
@@ -94,20 +70,10 @@ async function checkBalance(accountNumber) {
   `;
   const values = [accountNumber];
   const result = (await dB).query(query, values);
-  return result;
+  console.log(result);
+  return result[0]; // Extract the balance from the result
 }
 
-// CHECK IF CURRENCY IS THE SAME 
-async function checkSameCurrency(accountNumber) {
-  const query = `
-    SELECT Currency
-    FROM Accounts
-    WHERE Account_No = ?
-  `;
-  const values = [accountNumber];
-  const result = (await dB).query(query, values);
-  return result;
-}
 
 // WITHDRAWAL FROM AN ACCOUNT
 async function withdrawal(payload, id) {
@@ -116,23 +82,26 @@ async function withdrawal(payload, id) {
 
   if (error) {
     console.log(error.details, error.message)
-    return false
+    throw Error (error)
   }
 
   const { Amount, Source_account } = value;
 
   try {
     const accActive = await checkStatus(Source_account)
+    console.log(accActive)
 
     if (!accActive) {
-      logger.warn(`This account cannot transact`)
-      throw new AccClosedError(message)
+      logger.error(`This account cannot transact`)
+      throw new Error(`This account cannot transact`)
     }
 
     if (id == Source_account) {
 
       const hasAmount = await checkBalance(Source_account)
-      if (Amount >= hasAmount) {
+      console.log(hasAmount);
+      if (hasAmount >= Amount) {
+        logger.error(`Not Enough Balance`)
         throw new InsufficientError(message);
       }
 
@@ -165,6 +134,16 @@ async function withdrawal(payload, id) {
 
         return result;
       } else {
+        const withdrawQuery = `
+          UPDATE withdraws
+          SET Status = Failed
+          WHERE Transaction_id = ? 
+        `;
+
+        const value = [transaction_id]
+        const output = (await dB).query(withdrawQuery, value)
+        
+        logger.warn(`Withdraw failed`)
         return false;
       }
 
@@ -212,7 +191,7 @@ async function getSpecificWithdrawals(payload, account_id, id) {
 
   const query = `
     SELECT Transaction_id, Source_account, Amount, Created_at 
-    FROM Deposits
+    FROM withdraws
     WHERE Source_account = ? AND Transaction_id = ?
   `;
 
@@ -235,4 +214,8 @@ async function getSpecificWithdrawals(payload, account_id, id) {
   } catch (error) {
     throw Error(error.message)
   }
+}
+
+module.exports = {
+  withdrawal
 }

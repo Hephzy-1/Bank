@@ -2,19 +2,20 @@ const express = require('express');
 const accountRouter = express.Router();
 const logger = require('../middlewares/logger')
 const accFn = require('../controllers/account');
-const transFn = require('../controllers/transactions/deposit')
+const depositFn = require('../controllers/transactions/deposit')
+const withdrawFn = require('../controllers/transactions/withdraw')
 
 accountRouter.post('/', accFn.createAccount);
 // accountRouter.get('/:id', accFn.getAc);
 // accountRouter.get('/', accFn.getAccounts);
 // accountRouter.delete('/deleteAccount', accFn.closeAcc);
 accountRouter.post('/account/currency', accFn.createCurrencyAcc);
-accountRouter.post('/:id/deposits', transFn.depositAcc);
-// accountRouter.get('/:id/deposits', transFn.getDeposits);
-// accountRouter.get('/:account_id/deposits/:id', transFn.getUserDeposits);
-accountRouter.get('/:account_id/withdrawals/:id', accFn.getUserWithdrawals);
-accountRouter.get('/:id/withdrawals', accFn.getWithdrawal);
-accountRouter.post('/:id/withdrawals', accFn.withdrawFrom);
+accountRouter.post('/:id/deposits', depositFn.depositAcc);
+// accountRouter.get('/:id/deposits', depositFn.getDeposits);
+// accountRouter.get('/:account_id/deposits/:id', depositFn.getUserDeposits);
+// accountRouter.get('/:account_id/withdrawals/:id', depositFn.getUserWithdrawals);
+// accountRouter.get('/:id/withdrawals', depositFn.getWithdrawal);
+accountRouter.post('/:id/withdrawals', withdrawFn.withdrawFrom);
 accountRouter.post('/:id/transfers', accFn.transferTo);
 accountRouter.get('/:id/transfers', accFn.getTransfer);
 accountRouter.get('/:account_id/transfers/:id', accFn.getUserTransfer);

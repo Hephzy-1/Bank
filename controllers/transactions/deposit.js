@@ -1,6 +1,5 @@
 const logger = require('../../middlewares/logger')
 const transact = require('../../models/transactions/deposit');
-const { error } = require('winston');
 
 // DEPOSIT INTO ACCOUNT
 async function depositAcc (req, res) {
@@ -12,12 +11,12 @@ async function depositAcc (req, res) {
       logger.info(`Deposited Successfully`)
       res.status(200).json({Message: `Deposit successfully`})
     } else {
-      logger.warn(`Couldn't deposit`)
+      logger.error(`Couldn't deposit`)
       res.status(400).json({Message: `Error occurred somewhere`})
     }
 
   } catch (err) {
-    logger.warn(`${err.message}`)
+    logger.error(`${err.message}`)
     res.status(500).json({Message: `INTERNAL SERVER ERROR`, Error: err.message })
   }
 }

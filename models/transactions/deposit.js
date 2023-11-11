@@ -31,7 +31,7 @@ async function deposit(payload, id) {
     const accActive = await checkStatus(Destination_account)
 
     if (!accActive) {
-      logger.warn(`This account cannot transact`)
+      logger.error(`This account cannot transact`)
       throw new AccClosedError(message)
     }
 
@@ -64,6 +64,7 @@ async function deposit(payload, id) {
         const values = [Amount, Destination_account]
         const result = (await dB).query(amountQuery, values)
         
+        logger.info(`Deposit in progress`)
         return result;
 
       } else {
@@ -77,10 +78,12 @@ async function deposit(payload, id) {
         const value = [transaction_id]
         const output = (await dB).query(depositQuery, value)
         
+        logger.error(`Deposit failed`)
         return false;
       }
 
     } else {
+      logger.error(`ID doesn't match with account provided`)
       throw new Error(`ID doesn't match with account provided`)
     }
   } catch (error) {
