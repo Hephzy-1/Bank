@@ -22,10 +22,10 @@ async function depositAcc (req, res) {
 }
 
 // GET DETAILS ABOUT USERS DEPOSITS
-async function getDeposits (req, res) {
+async function getAllDeposits (req, res) {
   try {
     const id = req.params.id
-    const result = await transact.getDeposits(req.body, id)
+    const result = await transact.getdeposits(req.body, id)
 
     if (result) {
       res.status(200).json({Message: `Here is the result`, data: result[0]})
@@ -33,10 +33,8 @@ async function getDeposits (req, res) {
       res.status(400).json({Message: `Account Doesn't Exist`})
     }
   } catch (err) {
-    if (err instanceof AccClosedError) {
-      res.status(code).json({message: message})
-    } else if (err instanceof AccNotMatchError) {
-      res.status(code).json({message: message})
+    if (err === `ID Doesn't Match`) {
+      res.status(400).json({message: `The ID and Account Number Doesn't Match`})
     } else {
       res.status(500).json({Message: `INTERNAL SERVER ERROR`, Error: err.message })
     }
@@ -48,7 +46,7 @@ async function getUserDeposits (req, res) {
   try {
     const id = req.params.id;
     const account_id = req.params.account_id
-    const result = await transact.getSpecificDeposits(req.body, id, account_id)
+    const result = await transact.getSpecificdeposits(req.body, account_id, id)
 
     if (result) {
       res.status(200).json({Message: `Here is the result`, data: result[0]})
@@ -56,12 +54,10 @@ async function getUserDeposits (req, res) {
       res.status(400).json({Message: `Account Doesn't Exist`})
     }
   } catch (err) {
-    if (err instanceof AccClosedError) {
-      res.status(code).json({message: message})
-    } else if (err instanceof AccNotMatchError) {
-      res.status(code).json({message: message})
-    } else if (err instanceof IDNotMatchError) {
-      res.status(code).json({message: message})
+    if (err === `Account Number Doesn't Match`) {
+      res.status(400).json({message: `The Account ID doesn't match with the account number given`})
+    } else if (err === `Transaction ID Doesn't Match`) {
+      res.status(400).json({message: `The Transaction ID Doesn't match with the transaction id given`})
     } else {
       res.status(500).json({Message: `INTERNAL SERVER ERROR`, Error: err.message })
     }
@@ -69,5 +65,7 @@ async function getUserDeposits (req, res) {
 }
 
 module.exports = {
-  depositAcc
+  depositAcc,
+  getAllDeposits,
+  getUserDeposits
 }

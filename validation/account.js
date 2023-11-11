@@ -13,32 +13,15 @@ const otherCreateSchema = Joi.object({
   currency: Joi.string().length(3).required()
 })
 
-const depositSchema = Joi.object({
-  Amount : Joi.number().integer().precision(2).positive().required(),
-  Destination_account: Joi.number().integer().required(),
-})
-
-const withdrawalSchema = Joi.object({
-  Amount : Joi.number().integer().precision(2).positive().required(),
-  Source_account: Joi.number().integer().required(),
-})
-
 const closeSchema = Joi.object({
   account_number: Joi.number().integer().required(),
   role: Joi.string().required()
 })
 
-const billSchema = Joi.object({
-  Source_account: Joi.number().integer().required(),
-  Amount: Joi.number().integer().precision(2).positive().required(),
-  Bill_type: Joi.string().valid('airtime', 'betting', 'electricity', 'subscription').required()
-})
+
 
 module.exports = { 
   createSchema,
-  depositSchema,
   closeSchema,
-  withdrawalSchema,
-  otherCreateSchema,
-  billSchema
+  otherCreateSchema
 }

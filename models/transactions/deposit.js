@@ -1,6 +1,6 @@
 const dB = require('../../config/db');
 const uuid = require('uuid');
-const schema = require('../../validation/account');
+const schema = require('../../validation/transaction');
 const logger = require('../../middlewares/logger')
 
 // CHECK IF ACCOUNT EXISTS AND IS ACTIVE
@@ -15,7 +15,7 @@ async function checkStatus(accountNumber) {
   return result;
 }
 
-// deposit into AN ACCOUNT
+// DEPOSIT INTO AN ACCOUNT
 async function deposit(payload, id) {
 
   const { error, value } = schema.depositSchema.validate(payload);
@@ -95,27 +95,34 @@ async function deposit(payload, id) {
 
 // GET ALL depositsS TRANSACTIONS ABOUT SPECIFIC ACCOUNT
 async function getdeposits(payload, id) {
-  const { Account_number } = payload;
 
-  const query = `
-    SELECT Destination_account, Amount, Created_at
-    FROM depositss
-    WHERE Destination_account = ?
-  `;
+  const { error, value } = schema.getAlldepositSchema.validate(payload)
+
+  if (error) {
+    console.log(error.details, error.message);
+    throw error
+  }
+
+  const { Account_number } = value;
 
   try {
-    if (!decoded) {
-      return false;
-    } else {
-      if (id === Account_number) {
+    
+      if (id == Account_number) {
+
+        const query = `
+          SELECT Transaction_id, Destination_account, Amount, Created_at
+          FROM Deposits
+          WHERE Destination_account = ?
+        `;
+
         const value = [Account_number]
         const result = (await dB).query(query, value)
 
         return result;
+
       } else {
-        throw new AccNotMatchError(message)
+        throw new Error(`ID Doesn't Match`)
       }
-    }
 
   } catch (error) {
     throw Error(error)
@@ -124,28 +131,36 @@ async function getdeposits(payload, id) {
 
 // GET deposit TRANSACTIONS ABOUT SPECIFIC deposit
 async function getSpecificdeposits(payload, account_id, id) {
-  const { Account_number, Transaction_id } = payload
 
-  const query = `
-    SELECT Transaction_id, Destination_account, Amount, Created_at 
-    FROM Deposits
-    WHERE Destination_account = ? AND Transaction_id = ?
-  `;
+  const { error, value } = schema.getdepositSchema.validate(payload)
+
+  if (error) {
+    console.log(error.details, error.message);
+    throw error
+  }
+
+  const { Account_number, Transaction_id } = value
 
   try {
     if (account_id == Account_number) {
       if (id == Transaction_id) {
 
-        const value = [Account_number]
+        const query = `
+          SELECT Transaction_id, Destination_account, Amount, Created_at 
+          FROM Deposits
+          WHERE Destination_account = ? AND Transaction_id = ?
+        `;
+
+        const value = [Account_number, Transaction_id]
         const result = (await dB).query(query, value)
 
         return result;
       } else {
-        throw new IDNotMatchError(message)
+        throw new Error(`Transaction ID Doesn't Match`)
       }
 
     } else {
-      throw new AccNotMatchError(message)
+      throw new Error(`Account Number Doesn't Match`)
     }
 
   } catch (error) {
@@ -154,5 +169,7 @@ async function getSpecificdeposits(payload, account_id, id) {
 }
 
 module.exports = {
-  deposit
+  deposit,
+  getdeposits,
+  getSpecificdeposits
 }
