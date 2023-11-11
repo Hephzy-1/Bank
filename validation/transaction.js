@@ -19,6 +19,15 @@ const withdrawalSchema = Joi.object({
   Source_account: Joi.number().integer().required(),
 })
 
+const getAllWithdrawalSchema = Joi.object({
+  Account_number: Joi.number().integer().required()
+})
+
+const getWithdrawSchema = Joi.object({
+  Account_number: Joi.number().integer().required(),
+  Transaction_id: Joi.string().length(16).required()
+})
+
 const billSchema = Joi.object({
   Source_account: Joi.number().integer().required(),
   Amount: Joi.number().integer().precision(2).positive().required(),
@@ -30,5 +39,7 @@ module.exports = {
   getAlldepositSchema,
   getdepositSchema,
   withdrawalSchema,
+  getAllWithdrawalSchema,
+  getWithdrawSchema,
   billSchema
 }

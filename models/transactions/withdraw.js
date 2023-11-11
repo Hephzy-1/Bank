@@ -1,18 +1,9 @@
 const dB = require('../../config/db');
 const uuid = require('uuid');
-const schema = require('../../validation/account');
+const schema = require('../../validation/transaction');
 const logger = require('../../middlewares/logger')
 
 // CUSTOM ERRORS
-// Currency wasn't found
-class CurrencyError extends Error {
-  constructor(message) {
-    super(message);
-    this.name = "This Currency Doesn't Exist";
-    this.code = 404;
-  }
-}
-
 // ID and Account number doesn't match
 class AccNotMatchError extends Error {
   constructor(message) {
@@ -139,64 +130,77 @@ async function withdrawal(payload, id) {
 
 // GET ALL WITHDRAWALS TRANSACTIONS ABOUT SPECIFIC ACCOUNT
 async function getWithdrawals(payload, id) {
-  const { Account_number } = payload;
 
-  const query = `
-    SELECT Source_account, Amount, Created_at
-    FROM Withdrawals
-    WHERE Source_account = ?
-  `;
+  const { error, value } = schema.getAllWithdrawalSchema.validate(payload)
+
+  if (error) {
+    console.log(error.details, error.message);
+    throw error
+  }
+  const { Account_number } = value;
 
   try {
-    if (!decoded) {
-      return false;
-    } else {
-      if (id === Account_number) {
-        const value = [Account_number]
-        const result = (await dB).query(query, value)
+    
+    if (id == Account_number) {
 
-        return result;
-      } else {
-        throw new AccNotMatchError(message)
-      }
+      const query = `
+        SELECT Transaction_id, Source_account, Amount, Created_at
+        FROM Withdrawals
+        WHERE Source_account = ?
+      `;
+      const value = [Account_number]
+      const result = (await dB).query(query, value)
+
+      return result;
+    } else {
+      throw Error(`ID Doesn't Match`)
     }
 
   } catch (error) {
-    throw Error(error.message)
+    throw Error(error)
   }
 }
 
 // GET WITHDRAWAL TRANSACTIONS ABOUT SPECIFIC WITHDRAWAL
 async function getSpecificWithdrawals(payload, account_id, id) {
-  const { Account_number, Transaction_id } = payload
 
-  const query = `
-    SELECT Transaction_id, Source_account, Amount, Created_at 
-    FROM withdraws
-    WHERE Source_account = ? AND Transaction_id = ?
-  `;
+  const { error, value } = schema.getWithdrawSchema.validate(payload)
+
+  if (error) {
+    console.log(error.details, error.message);
+    throw error
+  }
+  const { Account_number, Transaction_id } = value
 
   try {
     if (account_id == Account_number) {
       if (id == Transaction_id) {
 
-        const value = [Account_number]
+        const query = `
+          SELECT Transaction_id, Source_account, Amount, Created_at 
+          FROM Withdrawals
+          WHERE Source_account = ? AND Transaction_id = ?
+        `;
+
+        const value = [Account_number, Transaction_id]
         const result = (await dB).query(query, value)
 
         return result;
       } else {
-        throw new IDNotMatchError(message)
+        throw Error(`ID Doesn't Match`)
       }
 
     } else {
-      throw new AccNotMatchError(message)
+      throw Error(`Account ID Doesn't Match`)
     }
 
   } catch (error) {
-    throw Error(error.message)
+    throw Error(error)
   }
 }
 
 module.exports = {
-  withdrawal
+  withdrawal,
+  getWithdrawals,
+  getSpecificWithdrawals
 }

@@ -26,7 +26,7 @@ async function withdrawFrom (req, res) {
 }
 
 // GET DETAILS ABOUT USERS Withdrawals
-async function getWithdrawal (req, res) {
+async function getAllWithdrawal (req, res) {
   try {
     const id = req.params.id
     const result = await transact.getWithdrawals(req.body, id)
@@ -37,7 +37,11 @@ async function getWithdrawal (req, res) {
       res.status(400).json({Message: `Account Doesn't Exist`})
     }
   } catch (err) {
-    res.status(500).json({Message: `INTERNAL SERVER ERROR`, Error: err.message});
+    if (err === `ID Doesn't Match`) {
+      res.status(400).json({message: `Account ID doesn't match with the account number`})
+    } else {
+      res.status(500).json({Message: `INTERNAL SERVER ERROR`, Error: err.message});
+    }
   }
 }
 
@@ -46,7 +50,7 @@ async function getUserWithdrawals (req, res) {
   try {
     const id = req.params.id;
     const account_id = req.params.account_id
-    const result = await transact.getSpecificWithdrawals(req.body, id, account_id)
+    const result = await transact.getSpecificWithdrawals(req.body, account_id, id)
 
     if (result) {
       res.status(200).json({Message: `Here is the result`, data: result[0]})
@@ -54,12 +58,10 @@ async function getUserWithdrawals (req, res) {
       res.status(400).json({Message: `Account Doesn't Exist`})
     }
   } catch (err) {
-    if (err instanceof AccClosedError) {
-      res.status(code).json({message: message})
-    } else if (err instanceof AccNotMatchError) {
-      res.status(code).json({message: message})
-    } else if (err instanceof IDNotMatchError) {
-      res.status(code).json({message: message})
+    if (err === `Account ID doesn't match`) {
+      res.status(code).json({message: `Account ID doesn't match with the given Account Number`})
+    } else if (err === `ID Doesn't Match`) {
+      res.status(code).json({message: `Transaction ID Doesn't Match with the given ID`})
     } else {
       res.status(500).json({Message: `INTERNAL SERVER ERROR`, Error: err.message })
     }
@@ -67,5 +69,7 @@ async function getUserWithdrawals (req, res) {
 }
 
 module.exports = {
-  withdrawFrom
+  withdrawFrom,
+  getAllWithdrawal,
+  getUserWithdrawals
 }
