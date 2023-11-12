@@ -1,28 +1,9 @@
 const dB = require('../../config/db');
 const jwt = require('../../utils/jwt');
 const uuid = require('uuid');
-const schema = require('../../validation/account');
-const logger = require('../../middlewares/logger')
-
-// CUSTOM ERRORS
-
-// Currency doesn't out
-class CurrencyNotMatchError extends Error {
-  constructor(message) {
-    super(message);
-    this.name = "Currency doesn't match";
-    this.code = 404;
-  }
-}
-
-// Account was closed
-class AccClosedError extends Error {
-  constructor(message) {
-    super(message);
-    this.name = "This Account has been closed";
-    this.code = 400;
-  };
-}
+const schema = require('../../validation/transaction');
+const logger = require('../../middlewares/logger');
+const { log } = require('winston');
 
 // ID and Account number doesn't match
 class AccNotMatchError extends Error {
@@ -51,13 +32,38 @@ class IDNotMatchError extends Error {
   };
 }
 
-// Make a bill payment.
-async function bills(input, id) {
+// CHECK IF ACCOUNT EXISTS AND IS ACTIVE
+async function checkStatus(accountNumber) {
+  const query = `
+    SELECT Status
+    FROM Accounts
+    WHERE Account_No = ? AND Status = 1
+  `;
+  const values = [accountNumber];
+  const result = (await dB).query(query, values);
+  return result;
+}
 
-  const { error, value } = schema.billSchema.validate(input)
+// CHECK IF ACCOUNT HAS ENOUGH MONEY TO TRANSACT AND THE CURRENCY USED TO TRANSACT
+async function checkBalance(accountNumber) {
+  const query = `
+    SELECT Balance, Currency
+    FROM Accounts
+    WHERE Account_No = ?
+  `;
+  const values = [accountNumber];
+  const result = (await dB).query(query, values);
+  return result;
+}
+
+// Make a bill payment.
+async function bills(payload, id) {
+
+  const { error, value } = schema.billSchema.validate(payload)
 
   if (error) {
-    throw error.message
+    console.log(error.message, error.details);
+    throw error
   }
 
   const { Source_account, Amount, Bill_type } = value;
@@ -67,31 +73,30 @@ async function bills(input, id) {
 
       const accActive = await checkStatus(Source_account)
 
-      if (!accActive) {
+      if (!accActive[0][0]) {
         logger.warn('This account has been closed. Cannot Transact')
-        throw new AccClosedError(message)
+        throw new Error('This account has been closed. Cannot Transact')
       }
 
+      const hasAmount = await checkBalance(Source_account)
+
       if (Amount >= 50) {
+        if (hasAmount[0][0].Balance >= Amount) {
 
-        const query = `
-          INSERT INTO Bills (Transaction_id, Type, Amount, Source_account)
-          VALUES (?, ?, ?, ?);
-        `;
+          const query = `
+            INSERT INTO Bills (Transaction_id, Type, Amount, Source_account)
+            VALUES (?, ?, ?, ?);
+          `;
 
-        // Generate a UUID (version 4)
-        const generatedUUID = uuid.v4();
+          // Generate a UUID (version 4)
+          const generatedUUID = uuid.v4();
 
-        // Remove hyphens and take the first 16 digits
-        const transaction_id = generatedUUID.replace(/-/, '').slice(0, 16);
+          // Remove hyphens and take the first 16 digits
+          const transaction_id = generatedUUID.replace(/-/, '').slice(0, 16);
 
-        console.log(transaction_id)
+          console.log(transaction_id)
 
-        const hasAmount = await checkBalance(Source_account)
-
-        if (hasAmount >= Amount) {
-
-          const value = [transaction_id, Amount, Source_account, Bill_type]
+          const value = [transaction_id, Bill_type, Amount, Source_account]
           const answer = (await dB).query(query, value);
 
           if (answer) {
@@ -112,80 +117,94 @@ async function bills(input, id) {
           }
         } else {
           logger.warn(`Insufficient Amount`)
-          throw new InsufficientError(message)
+          throw new Error(`Insufficient Amount`)
         }
       } else {
-        throw new CurrencyNotMatchError(message)
+        logger.warn(`You can only make a bill payment of 50 ${hasAmount[0][0].Currency} or more`)
+        throw new Error(`You can only make a bill payment of 50 or more`)
       }
     }
+
   } catch (error) {
-    throw Error(error.message)
+    throw Error(error)
   }
 
 }
 
 // GET ALL BILLS TRANSACTIONS ABOUT SPECIFIC ACCOUNT
-async function getBills(input, id, req) {
-  const decoded = jwt.verifyToken(req.headers["authorization"])
-  const { Account_number } = input;
+async function getBills(payload, id) {
 
-  const query = `
-    SELECT Source_account, Type, Amount, Created_at
-    FROM Bills
-    WHERE Source_account = ?
-  `;
+  const { error, value } = schema.getAllBillsSchema.validate(payload)
+
+  if (error) {
+    console.log(error.details, error.message);
+    throw error
+  }
+
+  const { Account_number } = value;
 
   try {
-    if (!decoded) {
-      return false;
-    } else {
-      if (id === Account_number) {
-        const value = [Account_number]
-        const result = (await dB).query(query, value)
+    if (id == Account_number) {
 
-        return result;
-      } else {
-        return false;
-      }
+      const query = `
+        SELECT Transaction_id, Source_account, Type, Amount, Created_at
+        FROM Bills
+        WHERE Source_account = ?
+      `;
+
+      const value = [Account_number]
+      const result = (await dB).query(query, value)
+
+      return result;
+    } else {
+      throw Error(`ID Doesn't Match`);
     }
 
   } catch (error) {
-    throw Error(error.message)
+    throw Error(error)
   }
 }
 
 // GET BILLS TRANSACTIONS ABOUT SPECIFIC BILLS
-async function getSpecificBills(input, id, bills, req) {
-  const decoded = jwt.verifyToken(req.headers["authorization"])
-  const { Account_number, Bill_type } = input
+async function getSpecificBills(payload, id, account_id) {
+  
+  const { error, value } = schema.getBillsSchema.validate(payload)
 
-  const query = `
-    SELECT Transaction_id, Type, Source_account, Amount, Created_at 
-    FROM Bills
-    WHERE Source_account = ? AND Type = ?
-  `;
+  if (error) {
+    console.log(error.details, error.message);
+    throw error
+  }
+  const { Account_number, Transaction_id} = value
 
   try {
-    if (!decoded) {
-      return false;
-    } else {
-      if (id == Account_number) {
-        if (bills == Bill_type) {
+      if (account_id == Account_number) {
+        if (id == Transaction_id) {
 
-          const value = [Account_number]
+          const query = `
+            SELECT Transaction_id, Type, Source_account, Amount, Created_at 
+            FROM Bills
+            WHERE Source_account = ? AND Transaction_id = ?
+          `;
+
+          const value = [Account_number, Transaction_id]
           const result = (await dB).query(query, value)
 
           return result;
         } else {
-          throw new IDNotMatchError(message)
+          throw new Error(`Transaction ID Doesn't Match`)
         }
 
       } else {
-        throw new AccNotMatchError(message)
+        throw new Error(`Account ID Doesn't Match`)
       }
-    }
 
   } catch (error) {
-    throw Error(error.message)
+    throw Error(error)
   }
+}
+
+module.exports = {
+  bills,
+  getBills,
+  getSpecificBills
 }

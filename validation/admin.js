@@ -8,10 +8,10 @@ const currencySchema = Joi.object({
 //   account_number: Joi.number().integer().max(9999999999).required()
 // })
 
-// const getAllSchema = Joi.object({
-//   email: Joi.string().email().required(),
-//   role: Joi.string().valid('admin').required()
-// })
+const getAllSchema = Joi.object({
+  email: Joi.string().email().required(),
+  role: Joi.string().valid('admin').required()
+})
 
 const closeSchema = Joi.object({
   email: Joi.string().email().required(),
@@ -28,6 +28,6 @@ module.exports = {
   closeSchema,
   openSchema,
   // getSchema,
-  // getAllSchema
+  getAllSchema
 
 }

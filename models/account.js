@@ -12,15 +12,6 @@ class CurrencyError extends Error {
   }
 }
 
-// ID and Account number doesn't match
-class AccNotMatchError extends Error {
-  constructor(message) {
-    super(message);
-    this.name = "This id doesn't match the account number";
-    this.code = 404;
-  };
-}
-
 // CHECK IF CURRENCY EXISTS
 async function checkCurrency(currency) {
   const query = `
@@ -33,30 +24,6 @@ async function checkCurrency(currency) {
   const result = (await dB).query(query, value)
 
   return result
-}
-
-// CHECK IF ACCOUNT HAS ENOUGH MONEY TO TRANSACT
-async function checkBalance(accountNumber) {
-  const query = `
-    SELECT Balance
-    FROM Accounts
-    WHERE Account_No = ?
-  `;
-  const values = [accountNumber];
-  const result = (await dB).query(query, values);
-  return result;
-}
-
-// CHECK IF CURRENCY IS THE SAME 
-async function checkSameCurrency(accountNumber) {
-  const query = `
-    SELECT Currency
-    FROM Accounts
-    WHERE Account_No = ?
-  `;
-  const values = [accountNumber];
-  const result = (await dB).query(query, values);
-  return result;
 }
 
 async function check(email) {

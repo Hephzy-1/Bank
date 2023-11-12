@@ -13,7 +13,6 @@ adminRouter.put('/activeAccount/:id', activeAcc);
 adminRouter.use((req, res, next) => {
   logger.warn(`Route not found: ${req.method} ${req.url}`);
   res.status(404).json({message: "PAGE NOT FOUND"});
-  res.statusCode(404);
   next(new Error("cant handle request"))
 });
 

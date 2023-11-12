@@ -28,10 +28,34 @@ const getWithdrawSchema = Joi.object({
   Transaction_id: Joi.string().length(16).required()
 })
 
+const transferSchema = Joi.object({
+  Source_account: Joi.number().integer().required(),
+  Destination_account: Joi.number().integer().required(),
+  Amount: Joi.number().integer().precision(2).positive().required()
+})
+
+const getAllTransferSchema = Joi.object({
+  Account_number: Joi.number().integer().required()
+})
+
+const getTransferSchema = Joi.object({
+  Account_number: Joi.number().integer().required(),
+  Transaction_id: Joi.string().length(16).required()
+})
+
 const billSchema = Joi.object({
   Source_account: Joi.number().integer().required(),
   Amount: Joi.number().integer().precision(2).positive().required(),
-  Bill_type: Joi.string().valid('airtime', 'betting', 'electricity', 'subscription').required()
+  Bill_type: Joi.string().valid('Airtime', 'Betting', 'Electricity', 'Data').required()
+})
+
+const getAllBillsSchema = Joi.object({
+  Account_number: Joi.number().integer().required()
+})
+
+const getBillsSchema = Joi.object({
+  Account_number: Joi.number().integer().required(),
+  Transaction_id: Joi.string().length(16).required()
 })
 
 module.exports = {
@@ -41,5 +65,10 @@ module.exports = {
   withdrawalSchema,
   getAllWithdrawalSchema,
   getWithdrawSchema,
-  billSchema
+  transferSchema,
+  getAllTransferSchema,
+  getTransferSchema,
+  billSchema,
+  getAllBillsSchema,
+  getBillsSchema
 }

@@ -5504,3 +5504,516 @@ info: POST /auth/user/login {"timestamp":"2023-10-14T18:44:39.550Z"}
 {"level":"info","message":"Server running on PORT 3100"}
 {"level":"info","message":"GET /account/1378915902/withdrawals/f90d86da34c5-4e7"}
 {"level":"info","message":"Token worked"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"GET /admin/accounts"}
+{"level":"info","message":"Token worked"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"GET /admin/accounts"}
+{"level":"info","message":"Token worked"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"GET /admin/accounts"}
+{"level":"info","message":"Token worked"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /auth/user/login"}
+{"level":"info","message":"POST /auth/user/login"}
+{"level":"info","message":"POST /auth/users/login"}
+{"level":"info","message":"User with email hzprincess01@gmail.com and role users retrieved from database"}
+{"level":"info","message":"POST /auth/users/login"}
+{"level":"info","message":"User with email hzprincess01@gmail.com and role users retrieved from database"}
+{"level":"info","message":"POST /auth/users/login"}
+{"level":"info","message":"User with email hzprincess01@gmail.com and role users retrieved from database"}
+{"level":"info","message":"POST /auth/users/login"}
+{"level":"info","message":"User with email hzprincess01@gmail.com and role users retrieved from database"}
+{"level":"info","message":"POST /auth/users/login"}
+{"level":"info","message":"User with email hzprincess01@gmail.com and role users retrieved from database"}
+{"level":"info","message":"POST /auth/users/login"}
+{"level":"info","message":"POST /auth/users/login"}
+{"level":"info","message":"User with email hzprincess01@gmail.com and role users retrieved from database"}
+{"level":"info","message":"POST /account/1378915902/transfers"}
+{"level":"info","message":"Token worked"}
+{"level":"warn","message":"Currencies do not match"}
+{"level":"error","message":"Error: Currencies do not match"}
+{"level":"info","message":"POST /account/1378915902/transfers"}
+{"level":"info","message":"Token worked"}
+{"level":"warn","message":"Currencies do not match"}
+{"level":"error","message":"Error: Currencies do not match"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /account/1378915902/transfers"}
+{"level":"info","message":"Token worked"}
+{"level":"warn","message":"Currencies do not match"}
+{"level":"error","message":"Error: Currencies do not match"}
+{"level":"info","message":"POST /account/1378915902/transfers"}
+{"level":"info","message":"Token worked"}
+{"level":"warn","message":"Currencies do not match"}
+{"level":"error","message":"Error: Currencies do not match"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /account/1378915902/transfers"}
+{"level":"info","message":"Token worked"}
+{"level":"warn","message":"Currencies do not match"}
+{"level":"error","message":"Error: Currencies do not match"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /account/1378915902/transfers"}
+{"level":"info","message":"Token worked"}
+{"level":"warn","message":"Currencies do not match"}
+{"level":"error","message":"Error: Currencies do not match"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /account/1378915902/transfers"}
+{"level":"info","message":"Token worked"}
+{"level":"warn","message":"Currencies do not match"}
+{"level":"error","message":"Error: Currencies do not match"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /account/1378915902/transfers"}
+{"level":"info","message":"Token worked"}
+{"level":"warn","message":"Insufficient Amount"}
+{"level":"error","message":"Error: Insufficient Amount"}
+{"level":"info","message":"POST /account/1378915902/transfers"}
+{"level":"info","message":"Token worked"}
+{"level":"warn","message":"Insufficient Amount"}
+{"level":"error","message":"Error: Insufficient Amount"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /account/1378915902/transfers"}
+{"level":"info","message":"Token worked"}
+{"level":"warn","message":"Insufficient Amount"}
+{"level":"error","message":"Error: Insufficient Amount"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /account/1378915902/transfers"}
+{"level":"info","message":"Token worked"}
+{"level":"info","message":"Transfer was a success"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /account/1378915902/transfers"}
+{"level":"info","message":"Token worked"}
+{"level":"info","message":"Transfer was a success"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"GET /account/1378915902/transfers"}
+{"level":"info","message":"Token worked"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"GET /account/1378915902/transfers"}
+{"level":"info","message":"Token worked"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"GET /account/1378915902/transfers/1fce189569ac-4fb"}
+{"level":"info","message":"Token worked"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"GET /account/1378915902/transfers/1fce189569ac-4fb"}
+{"level":"info","message":"Token worked"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /account/1378915902/bills"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /account/1378915902/bills"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /account/1378915902/bills"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /account/1378915902/bills"}
+{"level":"info","message":"Token worked"}
+{"level":"error","message":"accountModel is not defined"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /account/1378915902/bills"}
+{"level":"info","message":"Token worked"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'validate')"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /account/1378915902/bills"}
+{"level":"info","message":"Token worked"}
+{"level":"error","message":"\"Bill_type\" must be one of [airtime, betting, electricity, subscription]"}
+{"level":"info","message":"POST /account/1378915902/bills"}
+{"level":"info","message":"Token worked"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /account/1378915902/bills"}
+{"level":"info","message":"Token worked"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /account/1378915902/bills"}
+{"level":"info","message":"Token worked"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"POST /account/1378915902/bills"}
+{"level":"info","message":"Token worked"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"GET /account/1378915902/bills"}
+{"level":"info","message":"Token worked"}
+{"level":"error","message":"\"Account_number\" is required"}
+{"level":"info","message":"GET /account/1378915902/bills"}
+{"level":"info","message":"Token worked"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"GET /account/1378915902/bills/db960f0ebae9-4ed"}
+{"level":"info","message":"GET /account/1378915902/bills/db960f0ebae9-4ed"}
+{"level":"info","message":"POST /auth/users/login"}
+{"level":"info","message":"User with email hzprincess01@gmail.com and role users retrieved from database"}
+{"level":"info","message":"GET /account/1378915902/bills/db960f0ebae9-4ed"}
+{"level":"info","message":"Token worked"}
+{"level":"info","message":"GET /admin/activeAccount/2048909712"}
+{"level":"info","message":"Token worked"}
+{"level":"warn","message":"Route not found: GET /activeAccount/2048909712"}
+{"level":"info","message":"Server running on PORT 3100"}
+{"level":"info","message":"GET /admin/activeAccount/2048909712"}
+{"level":"info","message":"Token worked"}
+{"level":"warn","message":"Route not found: GET /activeAccount/2048909712"}
+{"level":"info","message":"GET /admin/activeAccountt/2048909712"}
+{"level":"info","message":"Token worked"}
+{"level":"warn","message":"Route not found: GET /activeAccountt/2048909712"}
+{"level":"info","message":"GET /admin/activeAccount/2048909712"}
+{"level":"info","message":"Token worked"}
+{"level":"warn","message":"Route not found: GET /activeAccount/2048909712"}

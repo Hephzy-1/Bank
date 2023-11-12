@@ -4,6 +4,8 @@ const logger = require('../middlewares/logger')
 const accFn = require('../controllers/account');
 const depositFn = require('../controllers/transactions/deposit')
 const withdrawFn = require('../controllers/transactions/withdraw')
+const transferFn = require('../controllers/transactions/transfer')
+const billFn = require('../controllers/transactions/bills')
 
 accountRouter.post('/', accFn.createAccount);
 // accountRouter.get('/:id', accFn.getAc);
@@ -16,12 +18,12 @@ accountRouter.get('/:account_id/deposits/:id', depositFn.getUserDeposits);
 accountRouter.get('/:account_id/withdrawals/:id', withdrawFn.getUserWithdrawals);
 accountRouter.get('/:id/withdrawals', withdrawFn.getAllWithdrawal);
 accountRouter.post('/:id/withdrawals', withdrawFn.withdrawFrom);
-accountRouter.post('/:id/transfers', accFn.transferTo);
-accountRouter.get('/:id/transfers', accFn.getTransfer);
-accountRouter.get('/:account_id/transfers/:id', accFn.getUserTransfer);
-accountRouter.post('/:id/bills', accFn.billPayment);
-accountRouter.get('/:id/bills', accFn.getBills);
-accountRouter.get('/:id/bills/:bills', accFn.getUserBills);
+accountRouter.post('/:id/transfers', transferFn.transferTo);
+accountRouter.get('/:id/transfers', transferFn.getTransfer);
+accountRouter.get('/:account_id/transfers/:id', transferFn.getUserTransfer);
+accountRouter.post('/:id/bills', billFn.billPayment);
+accountRouter.get('/:id/bills', billFn.getBills);
+accountRouter.get('/:account_id/bills/:id', billFn.getUserBills);
 accountRouter.get('/:account_id/transactions');
 
 accountRouter.use((req, res, next) => {

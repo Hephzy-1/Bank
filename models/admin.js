@@ -86,7 +86,7 @@ async function getAccounts(payload) {
     const { email, role } = value;
 
       const query = `
-      SELECT Users.Email, Users.Username, Accounts.Account_No, Accounts.Balance, Accounts.Account_Type, Accounts.Currency
+      SELECT Users.Email, Users.Username, Accounts.Account_No, Accounts.Balance, Accounts.Account_Type, Accounts.Currency, Accounts.Status
       FROM Users
       INNER JOIN Accounts ON Users.Email = Accounts.User_Email
     `;
