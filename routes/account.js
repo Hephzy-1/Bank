@@ -24,7 +24,7 @@ accountRouter.get('/:account_id/transfers/:id', transferFn.getUserTransfer);
 accountRouter.post('/:id/bills', billFn.billPayment);
 accountRouter.get('/:id/bills', billFn.getBills);
 accountRouter.get('/:account_id/bills/:id', billFn.getUserBills);
-accountRouter.get('/:account_id/transactions');
+accountRouter.get('/:account_id/transactions', accFn.transactions);
 
 accountRouter.use((req, res, next) => {
   logger.warn(`Route not found: ${req.method} ${req.url}`);

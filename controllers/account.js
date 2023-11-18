@@ -84,10 +84,32 @@ async function createCurrencyAcc (req, res) {
   }
 }
 
+// GET TRANSACTION HISTORY
+async function transactions (req, res) {
+  try {
+    const account_id = req.params.account_id
+    const result = await accountModel.allTransactions(req.body, account_id)
+    console.log(result)
+
+    if (result) {
+      res.status(200).json({message: `Here is your history`, data: result[0]})
+    } else {
+      res.status(400).json({message: `Can't get transaction history`})
+    }
+  } catch (error) {
+    if (error === `ID Doesn't Match`) {
+      res.status(400).json({message: `Account ID Doesn't Matcch With Given ID`})
+    } else {
+      res.status(500).json({message: `INTERNAL SERVER ERROR`, Err: error.message})
+    }
+  }
+}
+
 module.exports = {
   createAccount,
   // getAcc,
   // getAccounts,
   closeAcc,
-  createCurrencyAcc
+  createCurrencyAcc,
+  transactions
 }

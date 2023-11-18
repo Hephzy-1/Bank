@@ -2,7 +2,6 @@ const dB = require ('../config/db'); // Import your existing database dB module
 const { hashPassword } = require ("../utils/hash.js");
 const { registerEmail, sendResetEmail, passwordResetEmail } = require ("../utils/email.js");
 const { generateToken } = require("../utils/jwt");
-const { registerSchema, loginSchema, resetSchema, resetLinkSchema } = require ("../validation/auth.js");
 const config = require ("../config/env.js");
 const jwt = require('../utils/jwt');
 const logger = require('../middlewares/logger');
@@ -26,7 +25,7 @@ async function register(payload, role) {
 
   if (error) {
     console.log(error.details, error.message)
-    throw Error(error.message);
+    throw Error(error);
   }
 
   const { email, first_name, last_name, username, DOB, password } = value;
@@ -82,7 +81,8 @@ async function login(payload, role) {
 
   const { error, value } = loginSchema.validate(payload)
   if (error) {
-    throw Error(error.message)
+    console.log(error.details, error.message);
+    throw Error(error)
   }
 
   const { email, username, password } = value; 
@@ -122,7 +122,7 @@ const resetLink =  async (payload, role) => {
 
   const { error, value } = resetLinkSchema.validate(payload)
   if (error) {
-    throw Error(error.message);
+    throw Error(error);
   }
 
   
@@ -156,7 +156,7 @@ async function reset(payload, role, req) {
 
     const { error, value } = resetSchema.validate(payload)
     if (error) {
-      throw Error(error.message);
+      throw Error(error);
     }
 
     const { email, username, password, confirmpassword } = value;

@@ -38,9 +38,9 @@ return result;
 }
 
 // CREATE AN ACCOUNT
-async function createAccount(input) {
+async function createAccount(payload) {
   
-  const { error, value } = schema.createSchema.validate(input)
+  const { error, value } = schema.createSchema.validate(payload)
   if (error) {
     throw error
   }
@@ -48,9 +48,9 @@ async function createAccount(input) {
   const { email, accountNumber, account_type } = value
 
   try {
-    const decoded = await check(email)
+    const checkEmail = await check(email)
     
-    if (!decoded) {
+    if (!checkEmail) {
       logger.warn(`You cannot create an account as you haven't registered with us`)
      throw Error (`You cannot create an account as you haven't registered with us`)
     }
@@ -76,28 +76,23 @@ async function createAccount(input) {
 }
 
 // CREATE AN ACCOUNT IN OTHER CURRENCIES
-async function currencyAccount(input, req) {
+async function currencyAccount(payload, req) {
 
-  const { error, value } = schema.otherCreateSchema.validate(input)
+  const { error, value } = schema.otherCreateSchema.validate(payload)
   if (error) {
-    throw error.message
+    console.log(error.details, error.message);
+    throw error
   }
 
   const { email, accountNumber, account_type, currency } = value
 
   try {
-    // const decoded = jwt.verifyToken(req.headers["authorization"]); //ONLY PEOPLE WHO HAVE LOGGED IN WOULD GET THE TOKEN
-    // if (!decoded) {
-    //   return false;
-    // } else { 
-
-    // if (email === decoded) {
 
     const currencyExist = await checkCurrency(currency);
     if (!currencyExist) {
       console.log("I don't exist");
       logger.warn(`This currency doesn't Exists`)
-      throw CurrencyError(message);
+      throw Error(`This currency doesn't Exists`);
     }
 
     const query = `
@@ -113,84 +108,78 @@ async function currencyAccount(input, req) {
     logger.info(`Account has been created in ${currency} currency`);
 
     return result;
-    // } else {
-    //   return false;
-    // }
-    // }
+  
   } catch (error) {
-    throw Error(error.message)
-  }
-}
-
-// GET ALL DETAILS ABOUT SPECIFIC ACCOUNT
-async function getSpecificAccount(input, id, req) {
-  const { Account_number } = input
-
-  try {
-
-    const query = `
-      SELECT Users.Email, Users.Username, Accounts.Account_No, Accounts.Balance, Accounts.Account_Type, Accounts.Currency
-      FROM Users
-      INNER JOIN Accounts ON Users.Email = Accounts.User_Email
-      WHERE Account_No = ?
-    `;
-
-    if (id === Account_number) {
-      const value = [Account_number]
-      const result = (await dB).query(query, value)
-
-      return result;
-    } else {
-      return false;
-    }
-    // }
-
-  } catch (error) {
-    throw Error(error.message)
+    throw Error(error)
   }
 }
 
 // GET ALL TRANSACTIONS
-async function allTransactions(input, id, req) {
+async function allTransactions(payload, account_id) {
   
-  const { Account_number } = input;
-
-  const query = `
-  SELECT  Users.Email, Users.Username, Accounts.Account_No, Accounts.Account_Type, Accounts.Currency, 
-  transfers.Transaction_id, transfers.Amount, transfers.Source_account, transfers.Destination_account, transfers.Created_at, 
-      deposits.Transaction_id, deposits.Amount, deposits.Destination_account, deposits.Created_at,
-      withdrawals.Transaction_id, withdrawals.Source_account, withdrawals.Amount, withdrawals.Created_at,
-      bills.Transaction_id, bills.Source_account, bills.Type, bills.Amount, bills.Created_at
-    FROM Users
-    JOIN Accounts ON Users.Email = Accounts.User_Email 
-    JOIN Transfers ON transfers.Source_account = Accounts.Account_No
-    JOIN deposits ON deposits.Destination_account = accounts.Account_No
-    JOIN withdrawals ON withdrawals.Source_account = accounts.Account_No
-    JOIN bills ON bills.Source_account = accounts.Account_No;
-    WHERE Accounts.Account_NO = ?
-  `;
+  const { Account_number } = payload;
 
   try {
-    if (!decoded) {
-      return false;
-    } else {
-      if (id === Account_number) {
-        const value = [Account_number]
-        const result = (await dB).query(query, value)
+    
+    if (account_id == Account_number) {
 
-        return result;
-      } else {
-        return false;
+      const transferQuery = `
+        SELECT Users.Email, Users.Username, Accounts.Account_No, Accounts.Account_Type AS AccountType, Accounts.Currency, 
+          transfers.Transaction_id AS Transfer_id, transfers.Amount AS Transfer_Amount, transfers.Source_account AS Transfer_SourceAccount, transfers.Destination_account AS Transfer_DestinationAccount, transfers.Created_at AS Transfer_Time
+        FROM Users
+        INNER JOIN Accounts ON Users.Email = Accounts.User_Email 
+        INNER JOIN Transfers ON transfers.Source_account = Accounts.Account_No
+        WHERE Accounts.Account_No = ?
+      `;
+
+      const depositQuery = `
+        SELECT Accounts.Account_No, Deposits.Transaction_id AS Deposit_id, Deposits.Amount AS Deposit_Amount, Deposits.Destination_account AS Deposit_Account, Deposits.Created_at AS Deposit_Time
+        FROM Users
+        INNER JOIN Accounts ON Users.Email = Accounts.User_Email 
+        INNER JOIN Deposits ON Deposits.Destination_account = Accounts.Account_No
+        WHERE Accounts.Account_No = ?
+      `;
+
+      const withdrawalQuery = `
+        SELECT Accounts.Account_No, Withdrawals.Transaction_id AS Withdrawal_id, Withdrawals.Amount AS Withdrawal_Amount, Withdrawals.Source_account AS Withdrawal_Account, Withdrawals.Created_at AS Withdrawal_Time
+        FROM Users 
+        INNER JOIN Accounts ON Users.Email = Accounts.User_Email 
+        INNER JOIN Withdrawals ON Withdrawals.Source_account = Accounts.Account_No
+        WHERE Accounts.Account_No = ?
+      `;
+
+      const billQuery = `
+        SELECT Accounts.Account_No, Bills.Transaction_id AS Bill_id, Bills.Amount AS Bill_Amount, Bills.Source_account AS Bill_Account, Bills.Created_at AS Bill_Time
+        FROM Users 
+        INNER JOIN Accounts ON Users.Email = Accounts.User_Email 
+        INNER JOIN Bills ON Bills.Source_account = Accounts.Account_No
+        WHERE Accounts.Account_No = ?
+      `;
+      const value = [Account_number]
+      const transferResult = (await dB).query(transferQuery, value)
+      const depositResult = (await dB).query(depositQuery, value)
+      const withdrawResult = (await dB).query(withdrawalQuery, value)
+      const billResult = (await dB).query(billQuery, value)
+
+      const allTransactions = {
+        transferResult,
+        depositResult,
+        withdrawResult,
+        billResult
       }
+      return allTransactions;
+    } else {
+      throw Error(`ID Doesn't Match`);
     }
 
   } catch (error) {
-    throw Error(error.message)
+    throw Error(error)
   }
 
 }
 
 module.exports = {
   createAccount,
-  currencyAccount
+  currencyAccount,
+  allTransactions
 }

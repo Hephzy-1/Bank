@@ -2,9 +2,8 @@ const express = require("express");
 const authRouter = express.Router();
 const logger = require('../middlewares/logger')
 const { registration, loginUser, resetPassword, sendResetLink, logout } = require("../controllers/auth");
-const { createSchema } = require("../validation/account");
 
-authRouter.post("/:role", registration);
+authRouter.post("/:role",  registration);
 authRouter.post("/:role/login", loginUser);
 authRouter.put("/:role/reset-password/:token", resetPassword);
 authRouter.post("/:role/forgot-password", sendResetLink);
