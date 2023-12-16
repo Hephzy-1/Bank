@@ -1,7 +1,7 @@
 const dB = require ('../config/db'); // Import your existing database dB module
 const { hashPassword } = require ("../utils/hash.js");
 const { registerEmail, sendResetEmail, passwordResetEmail } = require ("../utils/email.js");
-const { generateToken } = require("../utils/jwt");
+const { registerSchema, loginSchema, resetSchema, resetLinkSchema } = require('../validation/auth');
 const config = require ("../config/env.js");
 const jwt = require('../utils/jwt');
 const logger = require('../middlewares/logger');
@@ -125,10 +125,9 @@ const resetLink =  async (payload, role) => {
     throw Error(error);
   }
 
-  
   const { email, username } = value;
 
-  const token = await generateToken(email)
+  const token = await jwt.generateToken(email)
   console.log(token);
 
   // Check if user exists
